@@ -1,76 +1,40 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html>
     <head>
-        <title>Бараа нэмэх </title>
+        <title>Бараа нэмэх</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head> 
-    <script>
-        function addRow()
-        {
-            // get input values
-            var fname = document.getElementById('fname').value;
-              var quantity = document.getElementById('quantity').value; 
-               var price = document.getElementById('price').value;
-                var price1 = document.getElementById('price1').value;
-                  var quantity1 = document.getElementById('quantity1').value;
-                    var quantity2 = document.getElementById('quantity2').value;
-                      var price2 = document.getElementById('price2').value;
-                       var price3 = document.getElementById('price3').value;
-              // get the html table
-              // 0 = the first table
-              var table = document.getElementsByTagName('table')[0];
-              // add new empty row to the table
-              // 0 = in the top 
-              // table.rows.length = the end
-              // table.rows.length/2+1 = the center
-              var newRow = table.insertRow(table.rows.length/2+1);
-              // add cells to the row
-              var cel1 = newRow.insertCell(0);
-              var cel2 = newRow.insertCell(1);
-              var cel3 = newRow.insertCell(2);
-              var cel4 = newRow.insertCell(3);
-              var cel5 = newRow.insertCell(4);
-              var cel6 = newRow.insertCell(5);
-              var cel7 = newRow.insertCell(6);
-              var cel8 = newRow.insertCell(7);
+        <script>
+            function addRow()
+            {
+                // get input values
+                var product_name = document.getElementById('product_name').value;
+                 var price1 = document.getElementById('price1').value;
+             
+                  var table = document.getElementsByTagName('table')[0];
+                  var newRow = table.insertRow(table.rows.length/2+1);
+                
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                 
+                  cel1.innerHTML = product_name;
+                  cel2.innerHTML = price1;   
+            }
+        </script>
+    </head>
+    <body>
+        <p><a href="./shijvvleh.html">Бараа шилжүүлэх</a> &nbsp;</p>
+        Барааны нэр: <input type="text" name="product_name" id="product_name" /><br/><br/>
+        Зарах үнэ: <input type="number" id="price1" name="price1" min="0" max="1000"/><br/><br/>
+        <button onclick="addRow();">Нэмэх</button><br/><br/>
+        <table border="1">
+            <tr>
+                <th>Барааны нэр</th>
+                <th>Зарах үнэ</th>
+            </tr>
+        
+        </table>
 
-              // add values to the cells
-              cel1.innerHTML = fname;
-              cel2.innerHTML = quantity;
-              cel3.innerHTML = price;
-              cel4.innerHTML = price1;
-              cel5.innerHTML = quantity1;
-              cel6.innerHTML = quantity2;
-              cel7.innerHTML = price2;
-              cel8.innerHTML = price3;
-
-        }
-    </script>
-    <body> 
-    <p><a href="./shijvvleh.html">Бараа шилжүүлэх</a> &nbsp;</p>
-    Барааны нэр: <input type="text" name="fname" id="fname" /><br/><br/>
-    Тоо ширхэг: <input type="number" id="quantity" name="quantity" min="0" max="1000"/><br/><br/>
-    Авсан үнэ: <input type="number" id="price" name="price" min="0" max="1000"/><br/><br/>
-    Зардал: <input type="number" id="price1" name="price1" min="0" max="1000"/><br/><br/>
-    Зардал ширхэг: <input type="number" id="quantity1" name="quantity1" min="0" max="1000"/><br/><br/>
-    Нийт Зардал: <input type="number" id="quantity2" name="quantity2" min="0" max="1000"/><br/><br/>
-    Нийт өртөг: <input type="number" id="price2" name="price2" min="0" max="1000"/><br/><br/>
-    Нэгж өртөг: <input type="number" id="price3" name="price3" min="0" max="1000"/><br/><br/>
-    <button onclick="addRow();">Нэмэх</button><br/><br/>
-
-    
-    <table border="1">
-        <tr>
-            <th>Барааны нэр</th>
-            <th>Тоо ширхэг</th>
-            <th>Авсан үнэ</th>
-            <th>Зардал</th>
-            <th>Зардал ширхэг</th>
-            <th>Нийт Зардал</th>
-            <th>Нийт өртөг</th>
-            <th>Нэгж өртөг</th>
-        </tr>
-    
-    </table>
     </body>
+
 </html>
