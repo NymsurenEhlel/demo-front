@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Бараа шилжүүлэх </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function addRow()
+            {
+                // get input values
+                var fname = document.getElementById('fname').value;
+                  var name = document.getElementById('name').value; 
+                   var quantity = document.getElementById('quantity').value;
+                  
+                  // get the html table
+                  // 0 = the first table
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  // add new empty row to the table
+                  // 0 = in the top 
+                  // table.rows.length = the end
+                  // table.rows.length/2+1 = the center
+                  var newRow = table.insertRow(table.rows.length/2+1);
+                  
+                  // add cells to the row
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                  var cel3 = newRow.insertCell(2);
+               
+                  // add values to the cells
+                  cel1.innerHTML = fname;
+                  cel2.innerHTML = name;
+                  cel3.innerHTML = quantity;
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+        Салбарын нэр: <input type="text" name="fname" id="fname" /><br/><br/>
+        Компани: <input type="text" name="name" id="name" /><br/><br/>
+        Тоо ширхэг: <input type="number" id="quantity" name="quantity" min="1" max="1000"/><br/><br/>
+        
+        <button onclick="addRow();">Нэмэх</button><br/><br/>
+        <table border="1">
+            <tr>
+                <th>Салбарын нэр</th>
+                <th>Компани</th>
+                <th>Тоо ширхэг</th>
+            </tr>
+        </table>
+    </body>
+</html>
